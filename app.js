@@ -15,11 +15,11 @@ board.on("ready", function() {
   });
 
   var firebaseConfig = {
-    apiKey: "AIzaSyD5b9D5DXnoM33FRJFAmXgmgyidXFTgjtQ",
+    apiKey: "sua key",
     authDomain: "iotprojeto-ddaa8.firebaseapp.com",
     databaseURL: "https://iotprojeto-ddaa8.firebaseio.com",
-    projectId: "iotprojeto-ddaa8",
-    storageBucket: "iotprojeto-ddaa8.appspot.com",
+    projectId: "id do seu projeto",
+    storageBucket: "id do seu projeto-ddaa8.appspot.com",
     messagingSenderId: "sender-id",
   };
 
