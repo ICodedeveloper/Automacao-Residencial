@@ -16,7 +16,7 @@ board.on("ready", function() {
 
   var firebaseConfig = {
     apiKey: "sua key",
-    authDomain: "iotprojeto-ddaa8.firebaseapp.com",
+    authDomain: "iotprojeto-ddaa8.firebaseapp.com", // ID DO SEU PROJETO
     databaseURL: "https://iotprojeto-ddaa8.firebaseio.com",
     projectId: "id do seu projeto",
     storageBucket: "id do seu projeto-ddaa8.appspot.com",
