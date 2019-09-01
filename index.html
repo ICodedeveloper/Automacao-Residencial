@@ -1,81 +1,110 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Modelo de Exercicio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <title>IOT PROJETO</title>
 
-<body>
-    <header id= Titulo>
-        <h1>Automação Residencial </h1>
-    </header>
-    <section>
+
+    <style>
+        body, html {
+             height: 100%;
+        }
         
-        <div id="foto">
-            <img  id="lampada"  situacao-lampada=""  alt="lamp">
-
-        </div>
-    </section>
-    <footer>
-        <p>&copy;ItamarJunior</p>
-    </footer>
-    
-        <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
-    
-        <script>
-
-        // TODO: Replace the following with your app's Firebase project configuration
-        var firebaseConfig = {
-                apiKey: "Sua Key",
-                authDomain: "iotprojeto-ddaa8.firebaseapp.com",
-                databaseURL: "https://iotprojeto-ddaa8.firebaseio.com",
-                projectId: "iotprojeto-ddaa8",
-                storageBucket: "iotprojeto-ddaa8.appspot.com",
-                messagingSenderId: "sender-id",
-  };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        
-        let lampada = document.querySelector("#lampada");
-            lampada.addEventListener('click', () => {
-            let estado = lampada.getAttribute("situacao-lampada");
-
-            if (estado == off) {
-                 firebase.database().ref("lampada").set("on");
-            }else {
-                firebase.database().ref("lampada").set("off");
-            }
-
-            });
-        
-        firebase.database().ref("lampada").on('value', snapshot =>{
-
-                let l =snapshot.val();  
-                    
-                if (l  == on) {
-                    lampada.src = "lamp1.jpg";
-                    lampada.setAttribute("data-state", "on");
-                } else {
-                    lampada.src = "lamp2.png";    
-                    lampada.setAttribute("data-state", "off");
-                }
-
-
-
-
-
-        })
-
-
-        </script>
+         body {
   
- 
+             display: flex;
+             align-items: middle;
+             justify-content: center;
+             background: blue;
+         }
+
+         
+        img {
+            padding:  50px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0,0, 16),0 2px 10px 0 rgba(0, 0, 0, 12)
+            blanchedalmond
+        }
+        
+        </style>
+
+
+</head>
+<body>
+      <img id="lampada" src=""  data-state="" alt="">
+
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
+
+  <script>
+    
+    var firebaseConfig = {
+        apiKey: "AIzaSyD5b9D5DXnoM33FRJFAmXgmgyidXFTgjtQ",
+       
+        authDomain: "iotprojeto-ddaa8.firebaseapp.com", // ID DO SEU PROJETO
+       
+        databaseURL: "https://iotprojeto-ddaa8.firebaseio.com",
+       
+        projectId: "iotprojeto-ddaa8",
+       
+        storageBucket: "iotprojeto-ddaa8-ddaa8.appspot.com",
+        
+        messagingSenderId: "sender-id",
+  };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+   
+   
+   
+    let lampada = document.querySelector("#lampada");
+
+    lampada.addEventListener("click",() =>{
+
+    let estado = lampada.getAttribute('data-state');
+
+    console.log(lampada);
+
+    if (estado == 'off') {
+
+        firebase.database().ref("lampada").set("on");
+    
+    }else{
+        
+        firebase.database().ref("lampada").set("off");
+}
+
+
+    });
+
+    firebase.database().ref('lampada').on('value', snapshot =>{
+
+         let l = snapshot.val();
+
+         if (l == "on") {
+            lampada.src ='lamp2.png';
+            lampada.setAttribute('data-state', 'on');
+
+         } else {
+            lampada.src ='lamp1.jpg';
+            lampada.setAttribute('data-state', 'off');
+
+         }
+
+
+
+
+    })
+
+  </script>
+
+
+
 
 </body>
-
 </html>
