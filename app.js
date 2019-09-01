@@ -4,22 +4,22 @@ var firebase = require("firebase");
 var board = new five.Board();
 
 board.on("ready", function() {
-  var led = new five.Led(13);
+ 
   var rele = new five.Relay(8);
 
 
-  
-  this.repl.inject({
-    led: led,
+    
+    this.repl.inject({
+      
     rele: rele
   });
 
   var firebaseConfig = {
-    apiKey: "sua key",
+    apiKey: "AIzaSyD5b9D5DXnoM33FRJFAmXgmgyidXFTgjtQ",
     authDomain: "iotprojeto-ddaa8.firebaseapp.com", // ID DO SEU PROJETO
     databaseURL: "https://iotprojeto-ddaa8.firebaseio.com",
-    projectId: "id do seu projeto",
-    storageBucket: "id do seu projeto-ddaa8.appspot.com",
+    projectId: "iotprojeto-ddaa8",
+    storageBucket: "iotprojeto-ddaa8.appspot.com",
     messagingSenderId: "sender-id",
   };
 
@@ -31,11 +31,11 @@ board.on("ready", function() {
 
       let lampada =  snapshot.val();
      
-       if (lampada == "on"){
-         led.on();
+       if (lampada == "off"){
+          
          rele.on();
        }else {
-          led.off();
+         
           rele.off();
        }
         
