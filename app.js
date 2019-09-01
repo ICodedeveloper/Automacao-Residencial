@@ -15,7 +15,7 @@ board.on("ready", function() {
   });
 
   var firebaseConfig = {
-    apiKey: "AIzaSyD5b9D5DXnoM33FRJFAmXgmgyidXFTgjtQ",
+    apiKey: "sua key",
     authDomain: "iotprojeto-ddaa8.firebaseapp.com", // ID DO SEU PROJETO
     databaseURL: "https://iotprojeto-ddaa8.firebaseio.com",
     projectId: "iotprojeto-ddaa8",
